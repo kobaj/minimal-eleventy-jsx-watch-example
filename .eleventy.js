@@ -2,6 +2,14 @@ import "tsx/esm";
 
 import { jsxToString } from "jsx-async-runtime";
 
+import { register } from 'node:module';
+
+register(`./src/_tsxfixes/cache-buster.js?${Date.now()}`,
+  {
+    parentURL: import.meta.url,
+  },
+)
+
 export default async function (eleventyConfig) {
   eleventyConfig.addExtension(["11ty.jsx", "11ty.ts", "11ty.tsx"], {
     key: "11ty.js",
