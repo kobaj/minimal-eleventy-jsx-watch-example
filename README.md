@@ -1,10 +1,19 @@
 # minimal-eleventy-jsx-watch-example
 A minimal example of how eleventy jsx watch is not correct.
 
-# Reproducing the issue
+# Update, it now works when you disable template cache!
+
+See the eleventy config for example, but there is a workaround [mentioned in github](https://github.com/11ty/eleventy/issues/3824#issuecomment-2980880288). All you need to do is set the following.
+
+```
+  eleventyConfig.setUseTemplateCache(false);
+```
+
+# Reproducing the original issue
 
 Reproducing the issue by running the following commands
 
+1. Remove the `setUseTemplateCache` line mentioned above
 1. Run npm install
 1. Run npm run serve
 1. Open browser to http://localhost:8080/
