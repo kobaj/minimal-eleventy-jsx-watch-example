@@ -21,8 +21,6 @@ export default async function (eleventyConfig) {
     },
   });
 
-  eleventyConfig.setUseTemplateCache(false);
-
   return {
     templateFormats: [
       "11ty.jsx",
